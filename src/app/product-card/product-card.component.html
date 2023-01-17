@@ -1,0 +1,12 @@
+<ion-item *ngIf="product" [routerLink]="'/product/' + product._id" [detail]="false">
+  <ion-label class="ion-text-wrap">
+    <h1>
+      {{ product.name }}
+      <span class="date">
+        <ion-note>{{ 'Exp: ' + product.expirationDate }}</ion-note>
+      </span>
+    </h1>
+    <p class="product-description-text">Quantity: <span [style]="product.quantity < product.desiredQuantity ? 'color: #C21807' : ''">{{ product.quantity + product.measurement }}</span></p>
+    <p class="product-description-text">{{ 'Price: ' + product.price + '$'}}</p>
+  </ion-label>
+</ion-item>

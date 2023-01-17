@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 align="center">Your current product:</h2>
+  <app-product-card [product]="product"></app-product-card>
+
+  <h4 class="info-text-styling">Do you want to update the product?</h4>
+
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantity</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Desired Quantity</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="desiredQuantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Measurement (pcs/g/ml)</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="measurement"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Expiration Date</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="expirationDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Price</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="price"></ion-input>
+  </ion-item>
+
+  <ion-button color="warning" expand="block" class="save-button-style" (click)="onUpdateButtonPressed()">
+    Save
+  </ion-button>
+
+  <p *ngIf="invalidDataError" class="error-text">Please enter valid data</p>
+  <p *ngIf="notFilledError" class="error-text">Please fill al the fields</p>
+
+  <ion-button color="danger" expand="block" class="save-button-style" (click)="onDeleteButtonPressed()">
+    Delete product
+  </ion-button>
+</ion-content>

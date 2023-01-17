@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add a new product</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="title-style">Please fill in the fields below</h2>
+
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantity</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Desired Quantity</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="desiredQuantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Measurement (pcs/g/ml)</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="measurement"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Expiration Date (dd/mm/yyyy | dd-mm-yyyy)</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="expirationDate"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Price ($)</ion-label>
+    <ion-input placeholder="Enter text" [(ngModel)]="price"></ion-input>
+  </ion-item>
+
+  <ion-button color="warning" expand="block" class="save-button-style" (click)="onSaveButtonPressed()">
+    Save
+  </ion-button>
+
+  <p *ngIf="invalidDataError" class="error-text">Please enter valid data</p>
+  <p *ngIf="notFilledError" class="error-text">Please fill al the fields</p>
+
+</ion-content>

@@ -1,0 +1,15 @@
+-- CREATE TABLE IF NOT EXISTS product(
+--     local_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     _id TEXT,
+--     productName varchar(50),
+--     quantity INTEGER,
+--     desiredQuantity INTEGER,
+--     measurement varchar(5),
+--     expirationData varchar(12),
+--     price INTEGER,
+--     synced INTEGER
+-- );
+drop table product;
+-- INSERT or IGNORE INTO product(productName, quantity, desiredQuantity, measurement, expirationData, price) VALUES ('Banana', 3, 2, 'pcs', '10/07/2023', 3);
+-- INSERT or IGNORE INTO product(productName, quantity, desiredQuantity, measurement, expirationData, price) VALUES ('Yogurt', 5, 2, 'pcs', '01/10/2023', 2);
+-- INSERT or IGNORE INTO product(productName, quantity, desiredQuantity, measurement, expirationData, price) VALUES ('Milk', 1000, 2000, 'ml', '14/03/2023', 1);
